@@ -1,0 +1,79 @@
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+@import url('http://fonts.cdnfonts.com/css/led-digital-7');
+:root{
+    --primary: #EF5350;
+    --the--red: #FF3D00;
+    --background: #232323;
+    --gray--color:#E4E8EA;
+    --btn-blue:#2AA9FE;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--primary);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: aliceblue;
+    letter-spacing: 0.15rem;
+    font-family: 'Pokemon Solid', sans-serif;
+    position: absolute;
+
+}
+
+.container{
+    background-color: var(--primary);
+    width: 100vw;
+    height: 300px;
+    text-align: center;
+    
+}
+#title{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+
+}
+h1, p {
+    text-decoration: none;
+
+}
+img{
+    position: relative;
+    left: 68%;
+    top: 30px;
+    
+}
+#search{
+    width: 50%;
+    min-width: 165px;
+    max-width: 250px;
+    text-align: start;
+    border: none;
+    border-radius: .25rem;
+    text-align: start;
+    padding: .25rem;
+    background-color: var(--background);
+    color: var(--border--color);
+    font-family: 'LED Digital 7', sans-serif;
+}
+i
+#search:focus{
+    outline: 1px solid var(--gray--color);
+}
+#search-btn{
+    font-family: 'LED Digital 7', sans-serif;
+    padding: 0.25rem;
+    border: none;
+    border-radius: .25rem;
+    background-color: var(--btn-blue);
+}
+#search-btn:hover{
+    background-color: red;
+}
