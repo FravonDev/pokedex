@@ -75,5 +75,7 @@ i
     background-color: var(--btn-blue);
 }
 #search-btn:hover{
-    background-color: red;
+    background-color: var(--btn-blue);
+    box-shadow: ;
 }
+
