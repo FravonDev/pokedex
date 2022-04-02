@@ -17,6 +17,12 @@ document.addEventListener("DOMContentLoaded", function(){
     //     alert("erro", err)
     // }
 
+    searchPokemon(pokemonLabel);
+}
+});
+
+
+function searchPokemon(pokemonLabel){
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonLabel}`)
     .then(res => {
         if (res.ok){
@@ -24,19 +30,22 @@ document.addEventListener("DOMContentLoaded", function(){
             res.json()
             .then((data) => {
                 pokemon = data;
-                if (pokemon != undefined){
-                    showPokemon(pokemon);
-        
+                console.log(data);
+                if(data.name){
+                    if (pokemon != undefined){
+                        showPokemon(pokemon);
+            
+                    }
                 }
+
             })
-        } else{
-            console.log("not sucessfull")
+        } else if(res.status == 404){
+            console.log(res.status)
         }
         // verify if we have a pokemon after fetching the data
         
     })
 }
-});
 
 function showPokemon(pokemon){
     if(typeof pokemon === 'object' && pokemon != undefined){
@@ -93,4 +102,6 @@ function printPokemonStats(pokemonStats){
 
     }
 }
-
+function showError(errorMsg){
+    alert(errorMsg);
+}
