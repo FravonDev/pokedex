@@ -40,6 +40,7 @@ function searchPokemon(pokemonLabel){
 }
 
 function showPokemon(pokemon){
+    document.getElementById("results").style.visibility = "visible"
     if(typeof pokemon === 'object' && pokemon != undefined){
         const resultDiv = document.getElementById("results");
         const pokemonName = document.getElementById("pokemon-name");
