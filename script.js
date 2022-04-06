@@ -24,7 +24,6 @@ function searchPokemon(pokemonLabel){
             res.json()
             .then((data) => {
                 pokemon = data;
-                console.log(data);
                 if(data.name){
                     if (pokemon != undefined){
                         showPokemon(pokemon);
@@ -67,7 +66,7 @@ function printPokemonStats(pokemonStats){
     }
     let statsDiv = document.createElement("div");
     statsDiv.id = "stats-container";
-    console.log(statsDiv);
+    
     document.getElementById("results").append(statsDiv);
 
     
@@ -88,7 +87,6 @@ function printPokemonStats(pokemonStats){
 
         
        
-        console.log(pokeStatsName)
         pokeStatsBox.appendChild(pokeStatsName);
         pokeStatsBox.appendChild(pokeStatsvalue);
         pokeStatsBox.appendChild(pokeStatsSpan);
