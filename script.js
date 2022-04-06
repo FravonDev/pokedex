@@ -10,12 +10,6 @@ document.addEventListener("DOMContentLoaded", function(){
         event.preventDefault()
     
     pokemonLabel = document.querySelector("#search").value
-    //fetch data from api
-    // try{
-
-    // } catch(error){
-    //     alert("erro", err)
-    // }
 
     searchPokemon(pokemonLabel);
 }
@@ -34,15 +28,14 @@ function searchPokemon(pokemonLabel){
                 if(data.name){
                     if (pokemon != undefined){
                         showPokemon(pokemon);
-            
                     }
                 }
-
             })
         } else if(res.status == 404){
-            console.log(res.status)
+            showError(
+            'pokemon not found',
+           )
         }
-        // verify if we have a pokemon after fetching the data
         
     })
 }
@@ -87,9 +80,10 @@ function printPokemonStats(pokemonStats){
         pokeStatsBox.className="stats-box";
         
         pokeStatsName.innerHTML = `${pokemonStats[i].stat.name}`;
-        pokeStatsName.id = `${pokemonStats[i].stat.name}`;
+        pokeStatsName.id = `p-${pokemonStats[i].stat.name}`;
         pokeStatsvalue.max = 100
         pokeStatsvalue.value = `${pokemonStats[i].base_stat}`;
+        pokeStatsvalue.id = `${pokemonStats[i].stat.name}`;
         pokeStatsSpan.innerText = `${pokemonStats[i].base_stat}/100`;
 
         
@@ -102,6 +96,14 @@ function printPokemonStats(pokemonStats){
 
     }
 }
-function showError(errorMsg){
-    alert(errorMsg);
+
+
+
+function showError(type, title, message){
+    Swal.fire(
+        "Who's That Pokemon?",
+        "Check the name and try again",
+        "question"
+      )
+
 }
